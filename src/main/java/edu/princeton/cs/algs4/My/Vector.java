@@ -20,7 +20,7 @@ public class Vector{
   }
   
   public double dot(Vector that){
-    if(that.dimension != d) throw new IllegaArgumentException("argument wrong");
+    if(that.d != d) throw new IllegaArgumentException("argument wrong");
     double sum = 0.0;
     for(int i=0;i<d;i++){
       sum += data[i]*that.data[i];
@@ -35,7 +35,7 @@ public class Vector{
   public Vector plus(Vector that){
     Vector ret = new Vector(d);
     for(int i=0;i<d;i++){
-      ret[i] = data[i] + that.data[i];
+      ret.data[i] = data[i] + that.data[i];
     }
     return ret;
   }
@@ -43,7 +43,7 @@ public class Vector{
   public Vector minus(Vector that){
     Vector ret = new Vector(d);
     for(int i=0;i<d;i++){
-      ret[i] = data[i] - that.data[i];
+      ret.data[i] = data[i] - that.data[i];
     }
     return ret;
   }
@@ -55,7 +55,7 @@ public class Vector{
   public Vector scale(double alpha){
     Vector ret = new Vector(d);
     for(int i=0;i<d;i++){
-      ret[i] = alpha * data[i];
+      ret.data[i] = alpha * data[i];
     }
     return ret;
   }
