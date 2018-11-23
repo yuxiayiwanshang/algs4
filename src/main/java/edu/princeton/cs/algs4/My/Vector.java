@@ -20,7 +20,7 @@ public class Vector{
   }
   
   public double dot(Vector that){
-    if(that.d != d) throw new IllegaArgumentException("argument wrong");
+    //if(that.d != d) throw new IllegaArgumentException("argument wrong");
     double sum = 0.0;
     for(int i=0;i<d;i++){
       sum += data[i]*that.data[i];
