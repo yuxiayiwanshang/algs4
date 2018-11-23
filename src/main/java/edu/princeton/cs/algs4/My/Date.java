@@ -4,7 +4,7 @@ public class Date implements Comparable<Date>{
   private final int month;
   private final int year;
   
-  pubilic Date(int day,int month,int year){
+  public Date(int day,int month,int year){
     this.day = day;
     this.month= month;
     this.year = year;
@@ -17,7 +17,7 @@ public class Date implements Comparable<Date>{
     }
     day = Integer.parseInt(fields[2]);
     month = Integer.parseInt(fields[1]);
-    day = Integer.parseInt(fields[i]);
+    year= Integer.parseInt(fields[0]);
   }
   
   public int Date(){
@@ -47,7 +47,7 @@ public class Date implements Comparable<Date>{
   
   public Date next(){
     if(isValid(day+1,month,year)) return new Date(day+1,month,year);
-    else if(isValid(1,month+1,year)) return new Date(day,month+1,year);
+    else if(isValid(1,month+1,year)) return new Date(1,month+1,year);
     else return new Date(1,1,year);
   }
   
