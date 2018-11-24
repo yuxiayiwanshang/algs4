@@ -45,7 +45,7 @@ public class DepthFirstPaths{
     Graph graph = new Graph(v,edges);
     System.out.println(graph.toString());
     
-    DepthFirstPaths dfs = new DepthFirstPaths(G, 1);
+    DepthFirstPaths dfs = new DepthFirstPaths(graph,1);
 
     for (int i= 0; i < graph.V(); i++) {
       if (dfs.hasPathTo(i)) {
