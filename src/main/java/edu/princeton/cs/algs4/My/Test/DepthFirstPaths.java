@@ -31,7 +31,7 @@ public class DepthFirstPaths{
   public Iterable<Integer> pathTo(int v){
     if(!hasPathTo(v)) return null;
     Stack<Integer> st = new Stack<Integer>();
-    for(int i=v;i != s; i=edgeTo(i)){
+    for(int i=v;i != s; i=edgeTo[i]){
       st.push(i);
     }
     st.push(s);
@@ -62,7 +62,7 @@ public class DepthFirstPaths{
     }
   }
   
-  class Graph{
+  static class Graph{
   private static final String NEWLINE = System.getProperty("line.separator");
   private int V;
   private int E;
