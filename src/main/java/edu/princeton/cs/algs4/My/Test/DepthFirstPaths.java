@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DepthFirstPaths{
   private boolean[] marked;
   private int[] edgeTo;
-  private int s;
+  private static int s;
   
   public DepthFirstPaths(Graph graph,int s){
     marked = new boolean[graph.V()];
