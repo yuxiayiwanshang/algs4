@@ -14,7 +14,7 @@ public class DepthFirstPaths{
     marked[s] = true;
     for(int w: graph.adj(s)){
       if(!marked[w]){
-        edges[w] = s;
+        edgeTo[w] = s;
         dfs(graph,w);
       }
     }
@@ -46,7 +46,7 @@ public class DepthFirstPaths{
     for (int i= 0; i < graph.V(); i++) {
       if (dfs.hasPathTo(i)) {
       System.out.printf("%d to %d:  ", s, i);
-      for (int w : dfs.pathTo(i) {
+      for (int w : dfs.pathTo(i) ){
         if (w == s) System.out.print(w);
         else        System.out.print("-" + w);
         }
