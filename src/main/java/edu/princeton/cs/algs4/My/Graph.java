@@ -17,8 +17,8 @@ public class Graph{
   }
   public Graph(int V,int[] edges){
     this(V);
-    for(int i=0;i<edges.length;i=i+2){
-      addEdge(i,i+1);
+    for(int i=0;i<edges.length-1;i=i+2){
+      addEdge(edges[i],edges[i+1]);
     }
   }
   
@@ -57,7 +57,7 @@ public class Graph{
   public static void main(String[] args){
     int v = 7;
     int[] edges = {0,1,0,2,1,3,1,4,2,5,2,6};
-    Graph graph = new Graph(v,a);
+    Graph graph = new Graph(v,edges);
     System.out.println(graph.toString());
   }
 }
