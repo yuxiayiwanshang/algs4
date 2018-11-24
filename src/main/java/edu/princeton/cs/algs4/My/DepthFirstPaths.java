@@ -1,3 +1,4 @@
+import java.util.Stack;
 public class DepthFirstPaths{
   private boolean[] marked;
   private int[] edgeTo;
