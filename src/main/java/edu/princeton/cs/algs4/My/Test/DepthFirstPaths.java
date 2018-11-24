@@ -52,7 +52,7 @@ public class DepthFirstPaths{
       System.out.printf("%d to %d:  ", s, i);
       for (int w : dfs.pathTo(i) ){
         if (w == s) System.out.print(w);
-        else        System.out.print("-" + w);
+        else        System.out.print(w + "->");
         }
         System.out.println();
       }
