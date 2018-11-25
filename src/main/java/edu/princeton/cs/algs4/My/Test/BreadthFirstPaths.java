@@ -1,25 +1,42 @@
 import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class BreadthFirstPaths{
+  private static final int INFINITY = Integer.MAX_VALUE;
   private boolean[] marked;
   private int[] edgeTo;
-  private static int s;
+  private static final s;
+  private int[] distTo;
   
   public BreadthFirstPaths(Graph graph,int s){
     marked = new boolean[graph.V()];
     edgeTo = new int[graph.V()];
+    distTo = new int[graph.V()];
+    for(int i=0;i<graph.V();i++){
+      distTo[i]= INFINITY;
+    }
     this.s = s;
-    dfs(graph,s);
+    bfs(graph,s);
   }
   
-  public void dfs(Graph graph,int s){
-    marked[s] = true;
-    for(int w: graph.adj(s)){
-      if(!marked[w]){
-        edgeTo[w] = s;
-        dfs(graph,w);
+  public void bfs(Graph graph,int s){
+    BlockingQueue<Integer> queue = new LinkedBlockingQueue<Integer>();
+    distTo[s];
+    marked[s]=true;
+    queue.add(s);
+    while(!queue.empty()){
+      int v = queue.remove();
+      //marked[v]=true;
+      for(int w:graph.adj(v)){
+        if(!marked[w]){
+          queue.add(w);
+          marked[w]=true;
+          distTo[w] = distTo[v]+1;
+          edgeTo[w] = v;
+        }
       }
     }
   }
