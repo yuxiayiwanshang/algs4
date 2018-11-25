@@ -8,7 +8,7 @@ public class BreadthFirstPaths{
   private static final int INFINITY = Integer.MAX_VALUE;
   private boolean[] marked;
   private int[] edgeTo;
-  private static final s;
+  private static final int s;
   private int[] distTo;
   
   public BreadthFirstPaths(Graph graph,int s){
@@ -24,7 +24,7 @@ public class BreadthFirstPaths{
   
   public void bfs(Graph graph,int s){
     BlockingQueue<Integer> queue = new LinkedBlockingQueue<Integer>();
-    distTo[s];
+    distTo[s] = 0;
     marked[s]=true;
     queue.add(s);
     while(!queue.empty()){
