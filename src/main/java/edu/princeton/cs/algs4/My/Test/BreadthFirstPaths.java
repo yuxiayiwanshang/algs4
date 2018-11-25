@@ -33,6 +33,7 @@ public class BreadthFirstPaths{
       for(int w:graph.adj(v)){
         if(!marked[w]){
           queue.add(w);
+          System.out.println(w);
           marked[w]=true;
           distTo[w] = distTo[v]+1;
           edgeTo[w] = v;
