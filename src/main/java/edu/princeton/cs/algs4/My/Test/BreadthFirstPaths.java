@@ -8,7 +8,7 @@ public class BreadthFirstPaths{
   private static final int INFINITY = Integer.MAX_VALUE;
   private boolean[] marked;
   private int[] edgeTo;
-  private static final int s;
+  private static int s;
   private int[] distTo;
   
   public BreadthFirstPaths(Graph graph,int s){
@@ -62,7 +62,7 @@ public class BreadthFirstPaths{
     Graph graph = new Graph(v,edges);
     System.out.println(graph.toString());
     
-    DepthFirstPaths dfs = new DepthFirstPaths(graph,1);
+    BreadthFirstPaths dfs = new BreadthFirstPaths(graph,1);
 
     for (int i= 0; i < graph.V(); i++) {
       if (dfs.hasPathTo(i)) {
