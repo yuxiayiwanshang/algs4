@@ -27,7 +27,7 @@ public class BreadthFirstPaths{
     distTo[s] = 0;
     marked[s]=true;
     queue.add(s);
-    while(!queue.empty()){
+    while(queue.peek()!=null){
       int v = queue.remove();
       //marked[v]=true;
       for(int w:graph.adj(v)){
